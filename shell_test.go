@@ -8,9 +8,9 @@ import (
 
 func TestAnalizarEntrada(t *testing.T) {
 	tests := []struct {
-		linea          string
-		comandoExp     string
-		argsExp        []string
+		linea           string
+		comandoExp      string
+		argsExp         []string
 		segundoPlanoExp bool
 	}{
 		{"ls -l /tmp", "ls", []string{"-l", "/tmp"}, false},
