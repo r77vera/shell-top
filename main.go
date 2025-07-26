@@ -60,6 +60,8 @@ func main() {
 		comando, args, segundoPlano := AnalizarEntrada(entrada)
 
 		// Si no hay comando (línea vacía o solo espacios), continuar al siguiente ciclo
+		// Esto evita errores al intentar ejecutar comandos vacíos
+		// También se ignoran líneas que solo contienen espacios o tabulaciones
 		if comando == "" {
 			continue
 		}
@@ -96,12 +98,42 @@ func mostrarBienvenida() {
 	fmt.Printf("%s%s", ColorCian, ColorNegrita)
 	fmt.Println("╔══════════════════════════════════════════════════════════════════╗")
 	fmt.Println("║                          🐚 GoShell v1.0                         ║")
-	fmt.Println("║                    Shell Básica implementada en Go              ║")
+	fmt.Println("║                    Shell Básica implementada en Go               ║")
 	fmt.Println("╚══════════════════════════════════════════════════════════════════╝")
 	fmt.Printf("%s", ColorReset)
 
 	fmt.Printf("\n%s%s¡Bienvenido a GoShell!%s\n", ColorVerde, ColorNegrita, ColorReset)
 	fmt.Printf("Una shell simple pero poderosa construida en Go.\n\n")
+
+	// Mostrar información de autores con enlaces de GitHub
+	fmt.Printf("%s%s👥 DESARROLLADORES:%s\n", ColorMagenta, ColorNegrita, ColorReset)
+	fmt.Printf("\n")
+	
+	// ASCII Art para r77vera
+	fmt.Printf("%s%s", ColorRojo, ColorNegrita)
+	fmt.Println("  ██████╗ ███████╗███████╗██╗   ██╗███████╗██████╗  █████╗ ")
+	fmt.Println("  ██╔══██╗╚════██║╚════██║██║   ██║██╔════╝██╔══██╗██╔══██╗")
+	fmt.Println("  ██████╔╝    ██╔╝    ██╔╝██║   ██║█████╗  ██████╔╝███████║")
+	fmt.Println("  ██╔══██╗   ██╔╝    ██╔╝ ╚██╗ ██╔╝██╔══╝  ██╔══██╗██╔══██║")
+	fmt.Println("  ██║  ██║   ██║     ██║   ╚████╔╝ ███████╗██║  ██║██║  ██║")
+	fmt.Println("  ╚═╝  ╚═╝   ╚═╝     ╚═╝    ╚═══╝  ╚══════╝╚═╝  ╚═╝╚═╝  ╚═╝")
+	fmt.Printf("%s", ColorReset)
+	fmt.Printf("                    %s🔗 https://github.com/r77vera%s\n\n", ColorCian, ColorReset)
+
+	// ASCII Art para Bjohan23
+	fmt.Printf("%s%s", ColorAzul, ColorNegrita)
+	fmt.Println("  ██████╗      ██╗ ██████╗ ██╗  ██╗ █████╗ ███╗   ██╗██████╗ ██████╗ ")
+	fmt.Println("  ██╔══██╗     ██║██╔═══██╗██║  ██║██╔══██╗████╗  ██║╚════██╗╚════██╗")
+	fmt.Println("  ██████╔╝     ██║██║   ██║███████║███████║██╔██╗ ██║ █████╔╝ █████╔╝")
+	fmt.Println("  ██╔══██╗██   ██║██║   ██║██╔══██║██╔══██║██║╚██╗██║██╔═══╝  ╚═══██╗")
+	fmt.Println("  ██████╔╝╚█████╔╝╚██████╔╝██║  ██║██║  ██║██║ ╚████║███████╗██████╔╝")
+	fmt.Println("  ╚═════╝  ╚════╝  ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═══╝╚══════╝╚═════╝ ")
+	fmt.Printf("%s", ColorReset)
+	fmt.Printf("                    %s🔗 https://github.com/Bjohan23%s\n\n", ColorCian, ColorReset)
+	
+	fmt.Printf("%s%s🎓 Proyecto académico - Taller de Lenguajes de Programación%s\n", ColorAmarillo, ColorNegrita, ColorReset)
+	fmt.Println("━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━")
+	fmt.Println()
 
 	fmt.Printf("%s%sComandos Internos Disponibles:%s\n", ColorAmarillo, ColorNegrita, ColorReset)
 	fmt.Printf("  %s• cd [directorio]%s  - Cambiar directorio (sin args = ir a home)\n", ColorCian, ColorReset)
